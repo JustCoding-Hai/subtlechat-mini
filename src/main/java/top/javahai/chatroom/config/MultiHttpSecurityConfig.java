@@ -145,7 +145,7 @@ public class MultiHttpSecurityConfig {
     //忽略"/login","/verifyCode"请求，该请求不需要进入Security的拦截器
     @Override
     public void configure(WebSecurity web) throws Exception {
-      web.ignoring().antMatchers("/login","/verifyCode","/file","/user/register","/user/checkUsername","/user/checkNickname");
+      web.ignoring().antMatchers("/login","/verifyCode","/file","/ossFileUpload","/user/register","/user/checkUsername","/user/checkNickname");
     }
     //登录验证
     @Override
