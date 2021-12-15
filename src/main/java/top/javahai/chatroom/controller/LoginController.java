@@ -53,9 +53,9 @@ public class LoginController {
     SimpleMailMessage msg = new SimpleMailMessage();
     msg.setSubject("微言聊天室管理端验证码验证");
     msg.setText("本次登录的验证码："+code);
-    msg.setFrom("1258398543@qq.com");
+    msg.setFrom("发送者的邮箱地址");
     msg.setSentDate(new Date());
-    msg.setTo("jinhaihuang824@aliyun.com");
+    msg.setTo("接受者的邮箱地址");
     //保存验证码到本次会话
     session.setAttribute("mail_verify_code",code.toString());
     //发送到邮箱
