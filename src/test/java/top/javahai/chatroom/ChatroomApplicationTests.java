@@ -37,25 +37,25 @@ void test02(){
     String html = emojiConverter.toHtml(str);
     System.out.println(html);
 }
-  @Autowired
-  JavaMailSender javaMailSender;
-  //测试邮件发送
-@Test
-   void test03(){
-    SimpleMailMessage msg=new SimpleMailMessage();
-    //邮件的主题
-    msg.setSubject("这是测试邮件主题");
-    //邮件的内容
-    msg.setText("这是测试邮件内容:\nsecond try");
-    //邮件的发送方，对应配置文件中的spring.mail.username
-    msg.setFrom("1258398543@qq.com");
-    //邮件发送时间
-    msg.setSentDate(new Date());
-    //邮件接收方
-    msg.setTo("jinhaihuang824@aliyun.com");
-    //执行发送
-    javaMailSender.send(msg);
-}
+//  @Autowired
+//  JavaMailSender javaMailSender;
+//  //测试邮件发送
+//@Test
+//   void test03(){
+//    SimpleMailMessage msg=new SimpleMailMessage();
+//    //邮件的主题
+//    msg.setSubject("这是测试邮件主题");
+//    //邮件的内容
+//    msg.setText("这是测试邮件内容:\nsecond try");
+//    //邮件的发送方，对应配置文件中的spring.mail.username
+//    msg.setFrom("1258398543@qq.com");
+//    //邮件发送时间
+//    msg.setSentDate(new Date());
+//    //邮件接收方
+//    msg.setTo("jinhaihuang824@aliyun.com");
+//    //执行发送
+//    javaMailSender.send(msg);
+//}
 //测试生成四个随机数
   @Test
   void test04(){
