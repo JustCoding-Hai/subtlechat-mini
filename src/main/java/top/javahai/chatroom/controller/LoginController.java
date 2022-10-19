@@ -36,35 +36,35 @@ public class LoginController {
     VerificationCode.output(image,response.getOutputStream());
   }
 
-  @Autowired
-  JavaMailSender javaMailSender;
-  /**
-   * 获取邮箱验证码，并保存到本次会话
-   * @param session
-   */
-  @GetMapping("/admin/mailVerifyCode")
-  public RespBean getMailVerifyCode(HttpSession session){
-    //获取随机的四个数字
-    StringBuilder code=new StringBuilder();
-    for (int i = 0; i <4; i++) {
-      code.append(new Random().nextInt(10));
-    }
-   //邮件内容
-    SimpleMailMessage msg = new SimpleMailMessage();
-    msg.setSubject("微言聊天室管理端验证码验证");
-    msg.setText("本次登录的验证码："+code);
-    msg.setFrom("发送者的邮箱地址");
-    msg.setSentDate(new Date());
-    msg.setTo("接受者的邮箱地址");
-    //保存验证码到本次会话
-    session.setAttribute("mail_verify_code",code.toString());
-    //发送到邮箱
-    try {
-      javaMailSender.send(msg);
-      return RespBean.ok("验证码已发送到邮箱，请注意查看！");
-    }catch (Exception e){
-      e.printStackTrace();
-      return RespBean.error("服务器出错啦！请稍后重试！");
-    }
-  }
+//  @Autowired
+//  JavaMailSender javaMailSender;
+//  /**
+//   * 获取邮箱验证码，并保存到本次会话
+//   * @param session
+//   */
+//  @GetMapping("/admin/mailVerifyCode")
+//  public RespBean getMailVerifyCode(HttpSession session){
+//    //获取随机的四个数字
+//    StringBuilder code=new StringBuilder();
+//    for (int i = 0; i <4; i++) {
+//      code.append(new Random().nextInt(10));
+//    }
+//   //邮件内容
+//    SimpleMailMessage msg = new SimpleMailMessage();
+//    msg.setSubject("微言聊天室管理端验证码验证");
+//    msg.setText("本次登录的验证码："+code);
+//    msg.setFrom("发送者的邮箱地址");
+//    msg.setSentDate(new Date());
+//    msg.setTo("接受者的邮箱地址");
+//    //保存验证码到本次会话
+//    session.setAttribute("mail_verify_code",code.toString());
+//    //发送到邮箱
+//    try {
+//      javaMailSender.send(msg);
+//      return RespBean.ok("验证码已发送到邮箱，请注意查看！");
+//    }catch (Exception e){
+//      e.printStackTrace();
+//      return RespBean.error("服务器出错啦！请稍后重试！");
+//    }
+//  }
 }
